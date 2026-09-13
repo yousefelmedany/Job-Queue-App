@@ -4,15 +4,17 @@ React submits jobs to FastAPI, which saves them in PostgreSQL and immediately re
 
 ## Run
 
-Create the local database secret once:
+Create the local database secret once, then start PostgreSQL and sync its password before starting the app:
 
 ```bash
 mkdir -p .secrets
 python3 -c 'import secrets,pathlib; p=pathlib.Path(".secrets/db_password"); p.exists() or p.write_text(secrets.token_urlsafe(36)+"\n"); p.chmod(0o600)'
-docker compose up --build
+docker compose up -d --wait postgres
+python3 scripts/sync_db_password.py
+docker compose up -d --build
 ```
 
-Open the UI at http://localhost:8080 or the API docs at http://localhost:8000/docs. Keep the generated `.secrets/db_password` file for future runs: replacing it does not automatically change the password in an existing PostgreSQL volume. The file is Git-ignored and mounted as a Compose secret.
+Open the UI at http://localhost:8080 or the API docs at http://localhost:8000/docs. The secret file is Git-ignored and mounted into the containers. The sync script is safe to run again: it updates the database role to match the file without deleting jobs. Keep the file for future runs.
 
 ## Example
 
