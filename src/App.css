@@ -1,0 +1,74 @@
+#root { min-height: 100vh; }
+.app-shell { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+.topbar { min-height: 82px; border-bottom: 1px solid #dce8f7; display: flex; align-items: center; justify-content: space-between; }
+.brand { display: flex; align-items: center; gap: 17px; }
+.brand-logo { width: 75px; height: 68px; object-fit: contain; }
+.brand-name { font: 700 23px Outfit, sans-serif; letter-spacing: -.7px; color: #15366a; }
+.topbar-tag { font-size: 12px; color: #41628d; border: 1px solid #cfdef3; background: #fff; border-radius: 999px; padding: 8px 13px; }
+.live-dot { display: inline-block; width: 7px; height: 7px; background: #1ab78e; border-radius: 50%; margin-right: 7px; box-shadow: 0 0 8px #1ab78e77; }
+.intro { padding: 67px 0 45px; }
+.eyebrow { color: #176fc7; font-size: 11px; font-weight: 800; letter-spacing: 2px; margin-bottom: 16px; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { font: 700 clamp(42px, 5vw, 64px)/1.05 Outfit, sans-serif; letter-spacing: -2.7px; margin-bottom: 19px; color: #102b58; }
+h1 em { font-style: normal; color: #2379cf; }
+.intro p { max-width: 560px; color: #607899; font-size: 15px; line-height: 1.75; margin: 0; }
+.grid { display: grid; grid-template-columns: 420px 1fr; gap: 20px; }
+.panel { background: #fff; border: 1px solid #d7e5f4; border-radius: 18px; overflow: hidden; box-shadow: 0 18px 45px #36639214; }
+.panel-heading { display: flex; align-items: center; gap: 13px; padding: 25px 26px; border-bottom: 1px solid #e0eaf5; }
+.heading-icon { flex: 0 0 auto; width: 38px; height: 38px; display: grid; place-items: center; border-radius: 11px; background: #e4f3ff; color: #0877ca; font-size: 25px; }
+.heading-icon.blue { background: #e5edff; color: #286cbf; font-size: 20px; }
+.panel-heading h2 { font: 600 19px Outfit, sans-serif; margin: 0 0 3px; color: #18345d; }
+.panel-heading p { font-size: 12px; color: #7e94af; margin: 0; }
+.activity-heading > div { min-width: 0; }
+.clear-button { margin-left: auto; white-space: nowrap; border: 1px solid #cbdcf2; color: #2365a9; background: #f7fbff; padding: 8px 10px; border-radius: 8px; font-size: 11px; font-weight: 700; }
+.clear-button:hover:not(:disabled) { background: #eaf4ff; }
+.clear-button:disabled { opacity: .45; }
+form { padding: 24px 26px 27px; display: grid; gap: 17px; }
+label { display: block; color: #294367; font-size: 12px; font-weight: 700; }
+label span { float: right; color: #8299b7; font-weight: 400; font-size: 11px; }
+input, select { display: block; width: 100%; height: 44px; margin-top: 8px; padding: 0 13px; border: 1px solid #cbdcf0; border-radius: 9px; background: #fbfdff; color: #18345d; outline: none; }
+input:focus, select:focus { border-color: #3d91e1; box-shadow: 0 0 0 3px #3d91e122; }
+.key-input { font-size: 11px; color: #4b6a91; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.submit-button { border: 0; border-radius: 9px; background: #237cce; color: white; height: 45px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; transition: background .2s; }
+.submit-button:hover { background: #126bbd; }
+.submit-button span { font-size: 19px; }
+.error-banner { color: #a93443; background: #fff0f1; padding: 10px; border-radius: 8px; font-size: 12px; margin: 0; }
+.empty { min-height: 375px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #8399b6; }
+.empty-icon { font-size: 53px; color: #75a8dc; margin-bottom: 14px; }
+.empty h3 { color: #284369; margin: 0 0 6px; font: 600 18px Outfit, sans-serif; }
+.empty p { font-size: 13px; }
+.job-list { max-height: 266px; overflow: auto; }
+.job-item { width: 100%; background: #fff; color: #244264; border: 0; border-bottom: 1px solid #e4edf6; padding: 17px 24px; display: flex; align-items: center; text-align: left; gap: 13px; }
+.job-item:hover, .job-item.active { background: #f0f7ff; }
+.status-dot { height: 9px; width: 9px; border-radius: 50%; background: #8d9ab1; }
+.status-dot.running { background: #3993e8; box-shadow: 0 0 9px #69aaff; }
+.status-dot.succeeded { background: #28b78b; }
+.status-dot.failed { background: #e65e70; }
+.status-dot.queued { background: #8b8cdf; }
+.job-item-text { display: flex; flex-direction: column; gap: 3px; flex: 1; }
+.job-item-text strong { font: 600 14px Outfit, sans-serif; }
+.job-item-text small { color: #8196b0; font-size: 11px; }
+.status-pill { border-radius: 99px; padding: 5px 9px; font-size: 10px; text-transform: uppercase; letter-spacing: .7px; font-weight: 800; background: #eef0ff; color: #6567bd; }
+.status-pill.running { background: #e6f2ff; color: #2874bb; }
+.status-pill.succeeded { background: #e5f8f0; color: #14916d; }
+.status-pill.failed { background: #ffebef; color: #c94b63; }
+.chevron { color: #8196b0; font-size: 19px; line-height: 1; transition: transform .15s; }
+.chevron.open { transform: rotate(180deg); }
+.details { padding: 22px 25px; background: #fcfdff; }
+.details-title { display: flex; align-items: center; justify-content: space-between; }
+.details-title h3 { font: 600 16px Outfit, sans-serif; margin: 0; }
+dl { margin: 14px 0 0; }
+dl div { display: flex; justify-content: space-between; gap: 15px; padding: 9px 0; border-bottom: 1px solid #e3ecf5; font-size: 12px; }
+dt { color: #8498b0; }
+dd { margin: 0; text-align: right; overflow-wrap: anywhere; }
+.mono { font-family: monospace; font-size: 11px; }
+.detail-message { margin-top: 15px; padding: 13px; border-radius: 9px; font-size: 12px; }
+.detail-message strong { display: block; margin-bottom: 6px; }
+.detail-message p { margin: 0; }
+.detail-message pre { white-space: pre-wrap; margin: 0; }
+.success { background: #e8f9f2; color: #167c5e; }
+.failure { background: #fff0f1; color: #b74e5c; }
+footer { display: flex; justify-content: space-between; color: #8b9db5; font-size: 11px; padding: 34px 0 45px; }
+@media(max-width: 850px) { .grid { grid-template-columns: 1fr; } .intro { padding: 55px 0 35px; } }
+@media(max-width: 500px) { .app-shell { padding: 0 17px; } .topbar-tag { display: none; } .intro { padding-top: 46px; } footer { flex-direction: column; gap: 7px; } .panel-heading, form { padding-left: 19px; padding-right: 19px; } .activity-heading { flex-wrap: wrap; } .clear-button { margin-left: 0; } }
